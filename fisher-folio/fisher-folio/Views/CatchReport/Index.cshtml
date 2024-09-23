@@ -1,0 +1,12 @@
+﻿@model fisher_folio.Models.Catch
+
+@* TEST  Test for object  TEST  *@
+<div>
+    <h1>Catch Report</h1>
+    <h2>Fangstoplysninger</h2>
+    <p>Fangst ID: @Model.CatchId</p>
+    <p>Fiskerens ID: @Model.UserId</p>
+    <p>Fiskeart: @Model.FishSpecies</p>
+    <p>Lokation: @Model.Location</p>
+    <p>Dato for fangst: @Model.CatchDate.ToString("dd-MM-yyyy HH:mm")</p>
+</div>
