@@ -1,3 +1,5 @@
+using fisher_folio.Data;
+using Microsoft.EntityFrameworkCore;
 namespace fisher_folio
 {
     public class Program
@@ -5,9 +7,13 @@ namespace fisher_folio
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            
+            
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<AppDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
